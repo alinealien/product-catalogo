@@ -19,4 +19,9 @@ public class ProductController {
     Product create(@RequestBody Product product) {
         return productRepository.save(product);
     }
+
+    @RequestMapping(value ="/{id}", method = RequestMethod.GET)
+    Optional<Product> findById(@PathVariable Interger id){
+        return productRepository.findById(id);
+    }
 }
